@@ -16,6 +16,7 @@
 #import "Globals.h"
 #import "SceneGraph.h"
 #import "Texture.h"
+#import "FlockingEntity.h"
 #import <vector>
 
 // initialize the engine (audio, grx, interaction)

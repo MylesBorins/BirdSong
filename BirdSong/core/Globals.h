@@ -53,6 +53,8 @@ public:
     static Vector3D ourSoftYellow;
     static Vector3D ourPurple;
     
+    // globals for phsyics
+    static GLfloat scaler;
 };
 
 #endif /* defined(__BirdSong__Globals__) */

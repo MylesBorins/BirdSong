@@ -43,7 +43,15 @@ void BirdSongInitGraph()
     
     Globals::touches = new TouchCollectionEntity(10);
     Globals::graph->root().addChild(Globals::touches);
-
+    
+    vector<Flock *> flockVector;
+    
+    for (int i = 0; i < 3; i++)
+    {
+        Flock * flock = new Flock;
+        flock->init(10);
+        Globals::graph->root().addChild(flock);
+    }
 }
 
 // set graphics dimensions

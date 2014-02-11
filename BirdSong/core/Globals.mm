@@ -32,3 +32,5 @@ Vector3D Globals::ourPurple( .6, .25, .6 );
 
 // Vectors to store stuff
 TouchCollectionEntity * Globals::touches = nullptr;
+
+GLfloat Globals::scaler = 0.5;

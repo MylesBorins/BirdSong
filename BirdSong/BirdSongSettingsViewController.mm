@@ -20,13 +20,13 @@
 
 - (void)viewDidLoad
 {
-//    self.dampeningSlider.value = Globals::damp;
-//    self.dampeningLabel.text = [NSString stringWithFormat:@"%f", Globals::damp];
+    self.dampeningSlider.value = Globals::scaler;
+    self.dampeningLabel.text = [NSString stringWithFormat:@"%f", Globals::scaler];
 }
 
 - (IBAction)sliderValueChanged:(UISlider *)sender {
-//    Globals::damp = sender.value;
-//    self.dampeningLabel.text = [NSString stringWithFormat:@"%f", Globals::damp];
+    Globals::scaler = sender.value;
+    self.dampeningLabel.text = [NSString stringWithFormat:@"%f", Globals::scaler];
 }
 
 @end

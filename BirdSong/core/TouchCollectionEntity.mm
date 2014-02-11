@@ -30,7 +30,6 @@ TouchCollectionEntity::TouchCollectionEntity(int count)
 
 TouchCollectionEntity::~TouchCollectionEntity()
 {
-    
     for (std::vector<YEntity *>::iterator it = children.begin(); it != children.end(); it++)
     {
         TouchEntity * te = (TouchEntity *)(*it);
