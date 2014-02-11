@@ -38,6 +38,7 @@
 		C42DB69E189B2E0F0053BECC /* Touch.mm in Sources */ = {isa = PBXBuildFile; fileRef = C42DB69C189B2E0F0053BECC /* Touch.mm */; };
 		C454E51A18A35FFB00CDD1F1 /* BirdSongSettingsViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = C454E51918A35FFB00CDD1F1 /* BirdSongSettingsViewController.mm */; };
 		C469E51018AAD8C800CE42E0 /* TouchCollectionEntity.mm in Sources */ = {isa = PBXBuildFile; fileRef = C469E50E18AAD8C800CE42E0 /* TouchCollectionEntity.mm */; };
+		C48B85C218AADFCB008F8A55 /* FlockingEntity.mm in Sources */ = {isa = PBXBuildFile; fileRef = C48B85C018AADFCB008F8A55 /* FlockingEntity.mm */; };
 		C49CD8611899CDB700FC7681 /* Globals.mm in Sources */ = {isa = PBXBuildFile; fileRef = C49CD85F1899CDB700FC7681 /* Globals.mm */; };
 		C49CD8661899D2FA00FC7681 /* Audio.mm in Sources */ = {isa = PBXBuildFile; fileRef = C49CD8641899D2FA00FC7681 /* Audio.mm */; };
 		C49CD86C1899D5C800FC7681 /* SceneGraph.mm in Sources */ = {isa = PBXBuildFile; fileRef = C49CD86A1899D5C800FC7681 /* SceneGraph.mm */; };
@@ -242,6 +243,8 @@
 		C454E51918A35FFB00CDD1F1 /* BirdSongSettingsViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BirdSongSettingsViewController.mm; sourceTree = "<group>"; };
 		C469E50E18AAD8C800CE42E0 /* TouchCollectionEntity.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TouchCollectionEntity.mm; sourceTree = "<group>"; };
 		C469E50F18AAD8C800CE42E0 /* TouchCollectionEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchCollectionEntity.h; sourceTree = "<group>"; };
+		C48B85C018AADFCB008F8A55 /* FlockingEntity.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FlockingEntity.mm; sourceTree = "<group>"; };
+		C48B85C118AADFCB008F8A55 /* FlockingEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlockingEntity.h; sourceTree = "<group>"; };
 		C49CD85F1899CDB700FC7681 /* Globals.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Globals.mm; sourceTree = "<group>"; };
 		C49CD8601899CDB700FC7681 /* Globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
 		C49CD8641899D2FA00FC7681 /* Audio.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; path = Audio.mm; sourceTree = "<group>"; };
@@ -700,6 +703,8 @@
 		C49CD8681899D38A00FC7681 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C454E51818A35FFB00CDD1F1 /* BirdSongSettingsViewController.h */,
+				C454E51918A35FFB00CDD1F1 /* BirdSongSettingsViewController.mm */,
 				8642C3421891F86500E4D7FE /* BirdSongViewController.h */,
 				8642C3431891F86500E4D7FE /* BirdSongViewController.mm */,
 			);
@@ -710,8 +715,6 @@
 			isa = PBXGroup;
 			children = (
 				8642C2E51891F82000E4D7FE /* Main_iPhone.storyboard */,
-				C454E51818A35FFB00CDD1F1 /* BirdSongSettingsViewController.h */,
-				C454E51918A35FFB00CDD1F1 /* BirdSongSettingsViewController.mm */,
 				8642C2E81891F82000E4D7FE /* Main_iPad.storyboard */,
 			);
 			name = storyboards;
@@ -720,6 +723,8 @@
 		C4A8382E18A1949200BA9499 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				C48B85C018AADFCB008F8A55 /* FlockingEntity.mm */,
+				C48B85C118AADFCB008F8A55 /* FlockingEntity.h */,
 				C49CD86D1899DAC900FC7681 /* Texture.mm */,
 				C49CD86E1899DAC900FC7681 /* Texture.h */,
 				C4A8382718A16D9100BA9499 /* TouchEntity.mm */,
@@ -1211,6 +1216,7 @@
 				C4A83B0E18A1B34A00BA9499 /* TcpServer.cpp in Sources */,
 				C4A83AEB18A1B34A00BA9499 /* Messager.cpp in Sources */,
 				C4A83AEA18A1B34A00BA9499 /* Mesh2D.cpp in Sources */,
+				C48B85C218AADFCB008F8A55 /* FlockingEntity.mm in Sources */,
 				C4A83AC818A1B34A00BA9499 /* BiQuad.cpp in Sources */,
 				C4A83AD918A1B34A00BA9499 /* FileRead.cpp in Sources */,
 				C4A83AD118A1B34A00BA9499 /* Clarinet.cpp in Sources */,
