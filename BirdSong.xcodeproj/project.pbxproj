@@ -37,6 +37,7 @@
 		8642C3601891FAC200E4D7FE /* texture.png in Resources */ = {isa = PBXBuildFile; fileRef = 8642C35F1891FAC200E4D7FE /* texture.png */; };
 		C42DB69E189B2E0F0053BECC /* Touch.mm in Sources */ = {isa = PBXBuildFile; fileRef = C42DB69C189B2E0F0053BECC /* Touch.mm */; };
 		C454E51A18A35FFB00CDD1F1 /* BirdSongSettingsViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = C454E51918A35FFB00CDD1F1 /* BirdSongSettingsViewController.mm */; };
+		C469E51018AAD8C800CE42E0 /* TouchCollectionEntity.mm in Sources */ = {isa = PBXBuildFile; fileRef = C469E50E18AAD8C800CE42E0 /* TouchCollectionEntity.mm */; };
 		C49CD8611899CDB700FC7681 /* Globals.mm in Sources */ = {isa = PBXBuildFile; fileRef = C49CD85F1899CDB700FC7681 /* Globals.mm */; };
 		C49CD8661899D2FA00FC7681 /* Audio.mm in Sources */ = {isa = PBXBuildFile; fileRef = C49CD8641899D2FA00FC7681 /* Audio.mm */; };
 		C49CD86C1899D5C800FC7681 /* SceneGraph.mm in Sources */ = {isa = PBXBuildFile; fileRef = C49CD86A1899D5C800FC7681 /* SceneGraph.mm */; };
@@ -239,6 +240,8 @@
 		C42DB69D189B2E0F0053BECC /* Touch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Touch.h; sourceTree = "<group>"; };
 		C454E51818A35FFB00CDD1F1 /* BirdSongSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BirdSongSettingsViewController.h; sourceTree = "<group>"; };
 		C454E51918A35FFB00CDD1F1 /* BirdSongSettingsViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BirdSongSettingsViewController.mm; sourceTree = "<group>"; };
+		C469E50E18AAD8C800CE42E0 /* TouchCollectionEntity.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TouchCollectionEntity.mm; sourceTree = "<group>"; };
+		C469E50F18AAD8C800CE42E0 /* TouchCollectionEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchCollectionEntity.h; sourceTree = "<group>"; };
 		C49CD85F1899CDB700FC7681 /* Globals.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Globals.mm; sourceTree = "<group>"; };
 		C49CD8601899CDB700FC7681 /* Globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
 		C49CD8641899D2FA00FC7681 /* Audio.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; path = Audio.mm; sourceTree = "<group>"; };
@@ -721,6 +724,8 @@
 				C49CD86E1899DAC900FC7681 /* Texture.h */,
 				C4A8382718A16D9100BA9499 /* TouchEntity.mm */,
 				C4A8382818A16D9100BA9499 /* TouchEntity.h */,
+				C469E50E18AAD8C800CE42E0 /* TouchCollectionEntity.mm */,
+				C469E50F18AAD8C800CE42E0 /* TouchCollectionEntity.h */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -1161,6 +1166,7 @@
 				8642C3461891F86500E4D7FE /* mo_fft.mm in Sources */,
 				C4A83ACE18A1B34A00BA9499 /* Bowed.cpp in Sources */,
 				C4A83AF618A1B34A00BA9499 /* PercFlut.cpp in Sources */,
+				C469E51018AAD8C800CE42E0 /* TouchCollectionEntity.mm in Sources */,
 				C4A83AC918A1B34A00BA9499 /* Blit.cpp in Sources */,
 				8642C3441891F86500E4D7FE /* mo_audio.mm in Sources */,
 				8642C3581891F86500E4D7FE /* renderer.mm in Sources */,
