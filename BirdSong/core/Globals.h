@@ -13,7 +13,7 @@
 #import "mo_audio.h"
 #import "mo_gfx.h"
 #import "SceneGraph.h"
-#import "TouchEntity.h"
+#import "TouchCollectionEntity.h"
 
 using namespace std;
 
@@ -40,7 +40,7 @@ public:
     static SceneGraph * graph;
     
     // to keep track of touches
-    static vector<TouchEntity *> touches;
+    static TouchCollectionEntity * touches;
     
     // colors
     static Vector3D ourWhite;

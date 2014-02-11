@@ -40,27 +40,7 @@ void touch_callback( NSSet * touches, UIView * view,
                 // begin
             case UITouchPhaseBegan:
             {
-                // make a new touch entity
-                TouchEntity * e = new TouchEntity();
-                // check
-                if( e != NULL )
-                {
-                    // append
-                    Globals::graph->root().addChild(e);
-                    Globals::touches.push_back(e);
-                    // active
-                    e->active = true;
-                    // reset transparency
-                    e->alpha = 1.0;
-                    // set location
-                    e->loc.set( x, y, 0 );
-                    // set color
-                    e->col.set( 1, 1, 1 );
-                    // set scale
-                    e->sca.setAll( 0.6 );
-                    // assign touch
-                    e->m_touch = touch;
-                }
+                Globals::touches->addTouch(touch, x, y);
                 break;
             }
             case UITouchPhaseStationary:
@@ -69,30 +49,14 @@ void touch_callback( NSSet * touches, UIView * view,
             }
             case UITouchPhaseMoved:
             {
-                for( vector<TouchEntity *>::iterator ei = Globals::touches.begin();
-                    ei!= Globals::touches.end(); ei++ )
-                {
-                    TouchEntity * touchEntity = (TouchEntity *)(*ei);
-                    if (touchEntity->m_touch == touch)
-                    {
-                        touchEntity->loc.x = x;
-                        touchEntity->loc.y = y;
-                    }
-                }
+                Globals::touches->updateTouch(touch, x, y);
                 break;
             }
                 // ended or cancelled
             case UITouchPhaseEnded:
             case UITouchPhaseCancelled:
             {
-                for (vector<TouchEntity*>::iterator it = Globals::touches.begin() ; it != Globals::touches.end(); ++it) {
-                    TouchEntity * te = (TouchEntity *)(*it);
-                    if ( te  && te->m_touch == touch ) {
-                        te->active = false;
-                        Globals::touches.erase(it);
-                        break;
-                    }
-                }
+                Globals::touches->removeTouch(touch);
                 break;
             }
                 // should not get here

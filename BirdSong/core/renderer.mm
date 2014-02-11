@@ -40,6 +40,9 @@ void BirdSongInitGraph()
 {
     // instantiate simulation
     Globals::graph = new SceneGraph();
+    
+    Globals::touches = new TouchCollectionEntity(10);
+    Globals::graph->root().addChild(Globals::touches);
 
 }
 

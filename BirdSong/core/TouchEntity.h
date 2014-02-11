@@ -21,7 +21,7 @@ public:
     ~TouchEntity();
     
 public:
-    UITouch* m_touch;
+    UITouch* _touch;
     static Texture * texture;
 };
 
