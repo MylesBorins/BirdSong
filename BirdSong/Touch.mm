@@ -40,29 +40,26 @@ void touch_callback( NSSet * touches, UIView * view,
                 // begin
             case UITouchPhaseBegan:
             {
-                if (Globals::touches.size() < 3)
+                // make a new touch entity
+                TouchEntity * e = new TouchEntity();
+                // check
+                if( e != NULL )
                 {
-                    // make a new touch entity
-                    TouchEntity * e = new TouchEntity();
-                    // check
-                    if( e != NULL )
-                    {
-                        // append
-                        Globals::graph->root().addChild(e);
-                        Globals::touches.push_back(e);
-                        // active
-                        e->active = true;
-                        // reset transparency
-                        e->alpha = 1.0;
-                        // set location
-                        e->loc.set( x, y, 0 );
-                        // set color
-                        e->col.set( 1, 1, 1 );
-                        // set scale
-                        e->sca.setAll( 0.6 );
-                        // assign touch
-                        e->m_touch = touch;
-                    }
+                    // append
+                    Globals::graph->root().addChild(e);
+                    Globals::touches.push_back(e);
+                    // active
+                    e->active = true;
+                    // reset transparency
+                    e->alpha = 1.0;
+                    // set location
+                    e->loc.set( x, y, 0 );
+                    // set color
+                    e->col.set( 1, 1, 1 );
+                    // set scale
+                    e->sca.setAll( 0.6 );
+                    // assign touch
+                    e->m_touch = touch;
                 }
                 break;
             }
@@ -86,6 +83,7 @@ void touch_callback( NSSet * touches, UIView * view,
             }
                 // ended or cancelled
             case UITouchPhaseEnded:
+            case UITouchPhaseCancelled:
             {
                 for (vector<TouchEntity*>::iterator it = Globals::touches.begin() ; it != Globals::touches.end(); ++it) {
                     TouchEntity * te = (TouchEntity *)(*it);
@@ -95,10 +93,6 @@ void touch_callback( NSSet * touches, UIView * view,
                         break;
                     }
                 }
-                break;
-            }
-            case UITouchPhaseCancelled:
-            {
                 break;
             }
                 // should not get here
