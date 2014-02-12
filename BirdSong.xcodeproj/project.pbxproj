@@ -1052,7 +1052,7 @@
 			attributes = {
 				CLASSPREFIX = BirdSong;
 				LastUpgradeCheck = 0500;
-				ORGANIZATIONNAME = "Ge Wang";
+				ORGANIZATIONNAME = "Myles Borins";
 				TargetAttributes = {
 					8642C2CB1891F82000E4D7FE = {
 						DevelopmentTeam = FUTU96J3U9;
@@ -1409,7 +1409,7 @@
 				GCC_PREFIX_HEADER = "BirdSong/BirdSong-Prefix.pch";
 				INFOPLIST_FILE = "BirdSong/BirdSong-Info.plist";
 				PRODUCT_NAME = BirdSong;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "BCD342F1-FA63-4446-B04C-8C57ED6FC1C2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1425,7 +1425,7 @@
 				GCC_PREFIX_HEADER = "BirdSong/BirdSong-Prefix.pch";
 				INFOPLIST_FILE = "BirdSong/BirdSong-Info.plist";
 				PRODUCT_NAME = BirdSong;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "BCD342F1-FA63-4446-B04C-8C57ED6FC1C2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
