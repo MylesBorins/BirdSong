@@ -35,6 +35,7 @@
 		8642C35C1891F87E00E4D7FE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8642C35B1891F87D00E4D7FE /* AudioToolbox.framework */; };
 		8642C3601891FAC200E4D7FE /* texture.png in Resources */ = {isa = PBXBuildFile; fileRef = 8642C35F1891FAC200E4D7FE /* texture.png */; };
 		C42DB69E189B2E0F0053BECC /* Touch.mm in Sources */ = {isa = PBXBuildFile; fileRef = C42DB69C189B2E0F0053BECC /* Touch.mm */; };
+		C4371B3918B1E798003A59E3 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4371B3718B1E798003A59E3 /* Main_iPad.storyboard */; };
 		C454E51A18A35FFB00CDD1F1 /* BirdSongSettingsViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = C454E51918A35FFB00CDD1F1 /* BirdSongSettingsViewController.mm */; };
 		C469E51018AAD8C800CE42E0 /* TouchCollectionEntity.mm in Sources */ = {isa = PBXBuildFile; fileRef = C469E50E18AAD8C800CE42E0 /* TouchCollectionEntity.mm */; };
 		C48B85C218AADFCB008F8A55 /* FlockingEntity.mm in Sources */ = {isa = PBXBuildFile; fileRef = C48B85C018AADFCB008F8A55 /* FlockingEntity.mm */; };
@@ -237,6 +238,7 @@
 		8642C35F1891FAC200E4D7FE /* texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texture.png; sourceTree = "<group>"; };
 		C42DB69C189B2E0F0053BECC /* Touch.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Touch.mm; sourceTree = "<group>"; };
 		C42DB69D189B2E0F0053BECC /* Touch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Touch.h; sourceTree = "<group>"; };
+		C4371B3818B1E798003A59E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		C454E51818A35FFB00CDD1F1 /* BirdSongSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BirdSongSettingsViewController.h; sourceTree = "<group>"; };
 		C454E51918A35FFB00CDD1F1 /* BirdSongSettingsViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BirdSongSettingsViewController.mm; sourceTree = "<group>"; };
 		C469E50E18AAD8C800CE42E0 /* TouchCollectionEntity.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TouchCollectionEntity.mm; sourceTree = "<group>"; };
@@ -712,6 +714,7 @@
 		C49CD8691899D39100FC7681 /* storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				C4371B3718B1E798003A59E3 /* Main_iPad.storyboard */,
 				8642C2E51891F82000E4D7FE /* Main_iPhone.storyboard */,
 			);
 			name = storyboards;
@@ -1113,6 +1116,7 @@
 				C4A83A9B18A1B34A00BA9499 /* dope.raw in Resources */,
 				C4A83AA218A1B34A00BA9499 /* impuls40.raw in Resources */,
 				C4A83A9918A1B34A00BA9499 /* cowbell1.raw in Resources */,
+				C4371B3918B1E798003A59E3 /* Main_iPad.storyboard in Resources */,
 				C4A83AC018A1B34A00BA9499 /* tomlowdr.raw in Resources */,
 				C4A83A9A18A1B34A00BA9499 /* crashcym.raw in Resources */,
 				8642C2DE1891F82000E4D7FE /* InfoPlist.strings in Resources */,
@@ -1307,6 +1311,14 @@
 				8642C3031891F82000E4D7FE /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C4371B3718B1E798003A59E3 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C4371B3818B1E798003A59E3 /* Base */,
+			);
+			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
