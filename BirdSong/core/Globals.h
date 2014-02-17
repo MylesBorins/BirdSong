@@ -44,8 +44,6 @@ public:
     
     // to keep track of touches
     static TouchPool * touches;
-//    static FlockingPool * flocks;
-//    static Flock * flock;
 
     // colors
     static Vector3D ourWhite;
