@@ -101,7 +101,7 @@ void SceneGraph::systemCascade()
     // check paused
     if( !m_isPaused )
     {
-        Simulation::updateAll( timeElapsed );
+        Simulation::systemCascade( timeElapsed );
         // update the world with a fixed timestep
         m_gfxRoot.updateAll( timeElapsed );
     }

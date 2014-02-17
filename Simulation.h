@@ -13,11 +13,21 @@
 #include "Globals.h"
 #import "mo_gfx.h"
 #import "y-entity.h"
+#import "FlockPool.h"
 
-class Simulation
+class Simulation : public YEntity
 {
+
 public:
-    static void updateAll( YTimeInterval dt );
+    // get the root
+    YEntity & root() { return _root; }
+protected:
+    YEntity _root;
+
+public:
+    // cascade timestep simulation through system (as connected to this)
+    static void systemCascade(YTimeInterval dt);
+
 };
 
 #endif /* defined(__BirdSong__Simulation__) */
