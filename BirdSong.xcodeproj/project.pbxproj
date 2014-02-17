@@ -15,7 +15,6 @@
 		8642C2DE1891F82000E4D7FE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8642C2DC1891F82000E4D7FE /* InfoPlist.strings */; };
 		8642C2E01891F82000E4D7FE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8642C2DF1891F82000E4D7FE /* main.m */; };
 		8642C2E71891F82000E4D7FE /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8642C2E51891F82000E4D7FE /* Main_iPhone.storyboard */; };
-		8642C2EA1891F82000E4D7FE /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8642C2E81891F82000E4D7FE /* Main_iPad.storyboard */; };
 		8642C2F31891F82000E4D7FE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8642C2F21891F82000E4D7FE /* Images.xcassets */; };
 		8642C2FA1891F82000E4D7FE /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8642C2F91891F82000E4D7FE /* XCTest.framework */; };
 		8642C2FB1891F82000E4D7FE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8642C2CF1891F82000E4D7FE /* Foundation.framework */; };
@@ -205,7 +204,6 @@
 		8642C2DF1891F82000E4D7FE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8642C2E11891F82000E4D7FE /* BirdSong-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BirdSong-Prefix.pch"; sourceTree = "<group>"; };
 		8642C2E61891F82000E4D7FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		8642C2E91891F82000E4D7FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		8642C2F21891F82000E4D7FE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8642C2F81891F82000E4D7FE /* BirdSongTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BirdSongTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8642C2F91891F82000E4D7FE /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -715,7 +713,6 @@
 			isa = PBXGroup;
 			children = (
 				8642C2E51891F82000E4D7FE /* Main_iPhone.storyboard */,
-				8642C2E81891F82000E4D7FE /* Main_iPad.storyboard */,
 			);
 			name = storyboards;
 			sourceTree = "<group>";
@@ -1101,7 +1098,6 @@
 				C4A83AAB18A1B34A00BA9499 /* mand3.raw in Resources */,
 				C4A83ABD18A1B34A00BA9499 /* snglpeak.raw in Resources */,
 				C4A83B1718A1B34A00BA9499 /* TODO in Resources */,
-				8642C2EA1891F82000E4D7FE /* Main_iPad.storyboard in Resources */,
 				C4A83AA718A1B34A00BA9499 /* mand10.raw in Resources */,
 				8642C2E71891F82000E4D7FE /* Main_iPhone.storyboard in Resources */,
 				C4A83A9318A1B34A00BA9499 /* COPYING in Resources */,
@@ -1303,14 +1299,6 @@
 				8642C2E61891F82000E4D7FE /* Base */,
 			);
 			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		8642C2E81891F82000E4D7FE /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8642C2E91891F82000E4D7FE /* Base */,
-			);
-			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		8642C3021891F82000E4D7FE /* InfoPlist.strings */ = {
