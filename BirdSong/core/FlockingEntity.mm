@@ -76,7 +76,7 @@ Vector3D Flock::collisionDetect(Boid * boid)
         {
             Vector3D diff = (iteratedBoid->loc - boid->loc);
             double magnitude = diff.magnitude();
-            if(magnitude < 0.4)
+            if(magnitude < 0.15)
             {
                 collision = collision -(iteratedBoid->loc - boid->loc);
             }
@@ -107,14 +107,13 @@ Vector3D Flock::potentialVelocity(Boid * boid)
 
 Vector3D Flock::tendToPlace(Boid * boid)
 {
-//
-    return (_centerMass - boid->loc) * Globals::scaler;//(place - boid->loc) * 0.0001 * (Globals::scaler * -1 + 1);
+    return (_centerMass - boid->loc) * Globals::scaler; //(place - boid->loc) * 0.0001 * (Globals::scaler * -1 + 1);
 }
 
 Vector3D Flock::boundPosition(Boid * boid)
 {
 //    float xmin = -10, xmax = 10, ymin = -0.7, ymax = 0.7, zmin = -150, zmax = 10;
-    float xmin = -1.45, xmax = 1.45, ymin = -0.7, ymax = 0.7, zmin = -.99, zmax = 1;
+    float xmin = -1.45, xmax = 1.45, ymin = -1., ymax = 1., zmin = -.99, zmax = 1;
     Vector3D v;
     if(boid->loc.x < xmin)
     {
