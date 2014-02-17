@@ -1,14 +1,14 @@
 //
-//  TouchCollectionEntity.cpp
+//  TouchPool.cpp
 //  BirdSong
 //
 //  Created by thealphanerd on 2/11/14.
 //  Copyright (c) 2014 Ge Wang. All rights reserved.
 //
 
-#include "TouchCollectionEntity.h"
+#include "TouchPool.h"
 
-TouchCollectionEntity::TouchCollectionEntity(int count)
+TouchPool::TouchPool(int count)
 {
     for (int i = 0; i < count; i++)
     {
@@ -28,7 +28,7 @@ TouchCollectionEntity::TouchCollectionEntity(int count)
     }
 };
 
-TouchCollectionEntity::~TouchCollectionEntity()
+TouchPool::~TouchPool()
 {
     for (std::vector<YEntity *>::iterator it = children.begin(); it != children.end(); it++)
     {
@@ -37,7 +37,7 @@ TouchCollectionEntity::~TouchCollectionEntity()
     }
 };
 
-void TouchCollectionEntity::addTouch(UITouch * touch, GLfloat x, GLfloat y)
+void TouchPool::addTouch(UITouch * touch, GLfloat x, GLfloat y)
 {
     std::vector<YEntity *>::iterator it = children.begin();
     TouchEntity * te = (TouchEntity *)(*it);
@@ -54,7 +54,7 @@ void TouchCollectionEntity::addTouch(UITouch * touch, GLfloat x, GLfloat y)
     te->loc.set(x, y, 0);
 };
 
-void TouchCollectionEntity::updateTouch(UITouch * touch, GLfloat x, GLfloat y)
+void TouchPool::updateTouch(UITouch * touch, GLfloat x, GLfloat y)
 {
     std::vector<YEntity *>::iterator it = children.begin();
     TouchEntity * te = (TouchEntity *)(*it);
@@ -69,7 +69,7 @@ void TouchCollectionEntity::updateTouch(UITouch * touch, GLfloat x, GLfloat y)
     te->loc.set(x, y, 0);
 };
 
-void TouchCollectionEntity::removeTouch(UITouch * touch)
+void TouchPool::removeTouch(UITouch * touch)
 {
     std::vector<YEntity *>::iterator it = children.begin();
     TouchEntity * te = (TouchEntity *)(*it);

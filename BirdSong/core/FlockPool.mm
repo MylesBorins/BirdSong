@@ -1,14 +1,14 @@
 //
-//  FlockingCollectionEntity.cpp
+//  FlockPool.cpp
 //  BirdSong
 //
 //  Created by thealphanerd on 2/17/14.
 //  Copyright (c) 2014 Myles Borins. All rights reserved.
 //
 
-#include "FlockingCollectionEntity.h"
+#include "FlockPool.h"
 
-FlockingCollectionEntity::FlockingCollectionEntity(int count)
+FlockPool::FlockPool(int count)
 {
     for (int i = 0; i < count; i++)
     {
@@ -23,22 +23,22 @@ FlockingCollectionEntity::FlockingCollectionEntity(int count)
         fe->col.setAll(1);
         // set scale
         fe->sca.setAll( 0.3 );
-        // assign Flocking
-//        fe->_Flocking = nullptr;
+        // assign Flock
+//        fe->_Flock = nullptr;
         addChild(fe);
     }
 };
 
-//FlockingCollectionEntity::~FlockingCollectionEntity()
+//FlockPool::~FlockPool()
 //{
 //    for (std::vector<YEntity *>::iterator it = children.begin(); it != children.end(); it++)
 //    {
-//        FlockingEntity * fe = (FlockingEntity *)(*it);
+//        FlockEntity * fe = (FlockEntity *)(*it);
 //        delete te;
 //    }
 //};
 //
-void FlockingCollectionEntity::addFlock(UITouch * touch, GLfloat x, GLfloat y)
+void FlockPool::addFlock(UITouch * touch, GLfloat x, GLfloat y)
 {
     std::vector<YEntity *>::iterator it = children.begin();
     Flock * fe = (Flock *)(*it);
@@ -55,7 +55,7 @@ void FlockingCollectionEntity::addFlock(UITouch * touch, GLfloat x, GLfloat y)
     fe->_centerMass.set(x, y, 0);
 };
 
-void FlockingCollectionEntity::updateFlock(UITouch * touch, GLfloat x, GLfloat y)
+void FlockPool::updateFlock(UITouch * touch, GLfloat x, GLfloat y)
 {
     std::vector<YEntity *>::iterator it = children.begin();
     Flock * fe = (Flock *)(*it);
@@ -70,7 +70,7 @@ void FlockingCollectionEntity::updateFlock(UITouch * touch, GLfloat x, GLfloat y
     fe->_centerMass.set(x, y, 0);
 };
 
-void FlockingCollectionEntity::removeFlock(UITouch * touch)
+void FlockPool::removeFlock(UITouch * touch)
 {
     std::vector<YEntity *>::iterator it = children.begin();
     Flock * fe = (Flock *)(*it);
