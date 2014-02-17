@@ -180,6 +180,7 @@
 		C4A83B1618A1B34A00BA9499 /* Wurley.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C4A83A8F18A1B34A00BA9499 /* Wurley.cpp */; };
 		C4A83B1718A1B34A00BA9499 /* TODO in Resources */ = {isa = PBXBuildFile; fileRef = C4A83A9018A1B34A00BA9499 /* TODO */; };
 		C4A83B1818A1B34A00BA9499 /* VERSIONS in Resources */ = {isa = PBXBuildFile; fileRef = C4A83A9118A1B34A00BA9499 /* VERSIONS */; };
+		C4AC347718B2026300C28EFF /* FlockingCollectionEntity.mm in Sources */ = {isa = PBXBuildFile; fileRef = C4AC347518B2026300C28EFF /* FlockingCollectionEntity.mm */; };
 		C4EBA6B3189989E700679240 /* y-entity.mm in Sources */ = {isa = PBXBuildFile; fileRef = C4EBA6A6189989E700679240 /* y-entity.mm */; };
 /* End PBXBuildFile section */
 
@@ -488,6 +489,8 @@
 		C4A83A8F18A1B34A00BA9499 /* Wurley.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Wurley.cpp; sourceTree = "<group>"; };
 		C4A83A9018A1B34A00BA9499 /* TODO */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODO; sourceTree = "<group>"; };
 		C4A83A9118A1B34A00BA9499 /* VERSIONS */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = VERSIONS; sourceTree = "<group>"; };
+		C4AC347518B2026300C28EFF /* FlockingCollectionEntity.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FlockingCollectionEntity.mm; sourceTree = "<group>"; };
+		C4AC347618B2026300C28EFF /* FlockingCollectionEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlockingCollectionEntity.h; sourceTree = "<group>"; };
 		C4EBA6A5189989E700679240 /* y-entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "y-entity.h"; sourceTree = "<group>"; };
 		C4EBA6A6189989E700679240 /* y-entity.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "y-entity.mm"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -635,6 +638,7 @@
 			isa = PBXGroup;
 			children = (
 				C42DB69F189B2E140053BECC /* Touch */,
+				C4A8382E18A1949200BA9499 /* Entities */,
 				C49CD8621899D2BC00FC7681 /* Gfx */,
 				C49CD8631899D2C300FC7681 /* Globals */,
 				C49CD8671899D2FF00FC7681 /* Audio */,
@@ -671,7 +675,6 @@
 		C49CD8621899D2BC00FC7681 /* Gfx */ = {
 			isa = PBXGroup;
 			children = (
-				C4A8382E18A1949200BA9499 /* Entities */,
 				8642C33E1891F86500E4D7FE /* renderer.h */,
 				8642C33F1891F86500E4D7FE /* renderer.mm */,
 				C4A8383218A19B5D00BA9499 /* Simulation.mm */,
@@ -725,6 +728,8 @@
 			children = (
 				C48B85C018AADFCB008F8A55 /* FlockingEntity.mm */,
 				C48B85C118AADFCB008F8A55 /* FlockingEntity.h */,
+				C4AC347518B2026300C28EFF /* FlockingCollectionEntity.mm */,
+				C4AC347618B2026300C28EFF /* FlockingCollectionEntity.h */,
 				C49CD86D1899DAC900FC7681 /* Texture.mm */,
 				C49CD86E1899DAC900FC7681 /* Texture.h */,
 				C4A8382718A16D9100BA9499 /* TouchEntity.mm */,
@@ -1159,6 +1164,7 @@
 			files = (
 				C4A83AD818A1B34A00BA9499 /* FileLoop.cpp in Sources */,
 				C4A83AC518A1B34A00BA9499 /* Asymp.cpp in Sources */,
+				C4AC347718B2026300C28EFF /* FlockingCollectionEntity.mm in Sources */,
 				C4A83AF318A1B34A00BA9499 /* NRev.cpp in Sources */,
 				C4A83B1418A1B34A00BA9499 /* VoicForm.cpp in Sources */,
 				C4A83AEE18A1B34A00BA9499 /* ModalBar.cpp in Sources */,
