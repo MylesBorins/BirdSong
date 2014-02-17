@@ -30,7 +30,7 @@ void BirdSongInit()
     
     // Init simulation
     BirdSongInitGraph();
-    
+    Simulation::init();
     // load the texture
     MoGfx::loadTexture( @"texture", @"png" );
 }
@@ -43,15 +43,6 @@ void BirdSongInitGraph()
     YEntity * root = &Globals::graph->root();
     Globals::touches = new TouchPool(10);
     root->addChild(Globals::touches);
-    
-    vector<Flock *> flockVector;
-    
-    for (int i = 0; i < 3; i++)
-    {
-        Flock * flock = new Flock;
-        flock->init(10);
-        root->addChild(flock);
-    }
 }
 
 // set graphics dimensions

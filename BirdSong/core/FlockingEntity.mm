@@ -39,7 +39,8 @@ void Boid::update( YTimeInterval dt )
         this->vel = (this->vel + v1 + v2 + v3 + v4 + v5);
         dtCount = 0;
     }
-    this->loc = this->loc + this->vel * dt;
+    // extra scler here
+    this->loc = this->loc + this->vel * dt * 0.5;
     return;
 };
 
@@ -107,11 +108,7 @@ Vector3D Flock::potentialVelocity(Boid * boid)
 Vector3D Flock::tendToPlace(Boid * boid)
 {
 //
-    if (Globals::scaler > .8)
-    {
-        return (_centerMass - boid->loc) * ((Globals::scaler * -1) + 1);
-    }
-    return (_centerMass - boid->loc) * 0.0001;//(place - boid->loc) * 0.0001 * (Globals::scaler * -1 + 1);
+    return (_centerMass - boid->loc) * Globals::scaler;//(place - boid->loc) * 0.0001 * (Globals::scaler * -1 + 1);
 }
 
 Vector3D Flock::boundPosition(Boid * boid)
@@ -148,7 +145,7 @@ Vector3D Flock::boundPosition(Boid * boid)
 
 void Flock::boundVelocity(Boid * boid)
 {
-    float limit = 3;
+    float limit = 1.5;
     Vector3D v;
     float mag = boid->vel.magnitude();
     

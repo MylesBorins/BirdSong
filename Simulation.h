@@ -26,8 +26,11 @@ protected:
 
 public:
     // cascade timestep simulation through system (as connected to this)
+    static void init();
     static void systemCascade(YTimeInterval dt);
 
+public:
+    static FlockPool * flocks;
 };
 
 #endif /* defined(__BirdSong__Simulation__) */

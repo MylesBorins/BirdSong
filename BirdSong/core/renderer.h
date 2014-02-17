@@ -18,6 +18,7 @@
 #import "Texture.h"
 #import "FlockingEntity.h"
 #import <vector>
+#import "Simulation.h"
 
 // initialize the engine (audio, grx, interaction)
 void BirdSongInit();

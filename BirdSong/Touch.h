@@ -13,7 +13,8 @@
 #import "mo_fun.h"
 #import "mo_touch.h"
 #import "Globals.h"
-#import "touchEntity.h"
+#import "TouchEntity.h"
+#import "Simulation.h"
 
 // initialize the touch interaction
 void NoireTouchInit();

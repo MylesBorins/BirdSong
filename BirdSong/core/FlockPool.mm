@@ -21,10 +21,8 @@ FlockPool::FlockPool(int count)
         fe->loc.setAll(0);
         // set color
         fe->col.setAll(1);
-        // set scale
-        fe->sca.setAll( 0.3 );
-        // assign Flock
-//        fe->_Flock = nullptr;
+        // assign touch
+        fe->_touch = nullptr;
         addChild(fe);
     }
 };
