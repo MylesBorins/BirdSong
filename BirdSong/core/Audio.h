@@ -25,6 +25,18 @@ public:
     static int m_maxAmountOfDelay;
     // amount of delay
     static int m_amountOfDelay;
+    
+    // simple scheduler
+    static UInt32 clock;
+    static double tempo;
+    static UInt32 thirtysecond;
+    static UInt32 sixteenth;
+    static UInt32 eigth;
+    static UInt32 quarter;
+    static UInt32 half;
+    static UInt32 whole;
+public:
+    static void setTempo(double tempo);
 };
 
 #endif /* defined(__BirdSong__Audio__) */

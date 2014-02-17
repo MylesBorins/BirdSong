@@ -18,7 +18,7 @@
 using namespace std;
 
 #define SRATE 24000
-#define FRAMESIZE 512
+#define FRAMESIZE 1024
 #define NUM_CHANNELS 2
 #define NUM_ENTITIES 200
 
