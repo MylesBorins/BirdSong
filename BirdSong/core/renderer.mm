@@ -40,9 +40,9 @@ void BirdSongInitGraph()
 {
     // instantiate simulation
     Globals::graph = new SceneGraph();
-    
+    YEntity * root = &Globals::graph->root();
     Globals::touches = new TouchCollectionEntity(10);
-    Globals::graph->root().addChild(Globals::touches);
+    root->addChild(Globals::touches);
     
     vector<Flock *> flockVector;
     
@@ -50,7 +50,7 @@ void BirdSongInitGraph()
     {
         Flock * flock = new Flock;
         flock->init(10);
-        Globals::graph->root().addChild(flock);
+        root->addChild(flock);
     }
 }
 

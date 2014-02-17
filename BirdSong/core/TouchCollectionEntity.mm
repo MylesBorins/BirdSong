@@ -21,7 +21,7 @@ TouchCollectionEntity::TouchCollectionEntity(int count)
         // set color
         te->col.setAll(1);
         // set scale
-        te->sca.setAll( 0.6 );
+        te->sca.setAll( 0.3 );
         // assign touch
         te->_touch = nullptr;
         addChild(te);

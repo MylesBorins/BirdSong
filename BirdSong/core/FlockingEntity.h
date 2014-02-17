@@ -28,10 +28,6 @@ public:
     Boid();
     
 public:
-    //set
-    void set();
-    
-public:
     // update
     void update( YTimeInterval dt);
     // void render();
@@ -54,7 +50,6 @@ public:
     
 public:
     //set
-    void set();
     void init(int count);
     
 public:
@@ -70,7 +65,8 @@ public:
     
 public:
     // alpha ramp
-    Vector3D ALPHA;
+    UITouch* _touch;
+    bool _locked;
 };
 
 #endif /* defined(__BirdSong__FlockingEntity__) */

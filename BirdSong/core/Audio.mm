@@ -41,7 +41,6 @@ void audio_callback( Float32 * buffer, UInt32 numFrames, void * userData )
 //    {
 //        NSLog( @"QUARTER NOTE" );
 //    }
-    // NSLog( @"." );
 }
 
 bool Audio::init()
