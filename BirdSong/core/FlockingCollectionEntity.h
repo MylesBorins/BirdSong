@@ -24,9 +24,10 @@ public:
     
 public:
     void addFlock(UITouch * touch, GLfloat x, GLfloat y);
-//    void updateFlock(UITouch * touch, GLfloat x, GLfloat y);
+    void updateFlock(UITouch * touch, GLfloat x, GLfloat y);
 //    void lockFlock(UITouch * touch, GLfloat x, GLfloat y);
 //    void removeFlock(GLfloat x, GLfloat y);
+    void removeFlock(UITouch * touch);
 public:
     
     // update

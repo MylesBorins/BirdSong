@@ -54,35 +54,35 @@ void FlockingCollectionEntity::addFlock(UITouch * touch, GLfloat x, GLfloat y)
     fe->_touch = touch;
     fe->_centerMass.set(x, y, 0);
 };
-//
-//void FlockingCollectionEntity::updateFlocking(UITouch * Flocking, GLfloat x, GLfloat y)
-//{
-//    std::vector<YEntity *>::iterator it = children.begin();
-//    FlockingEntity * fe = (FlockingEntity *)(*it);
-//    while (fe->_Flocking != Flocking)
-//    {
-//        it++;
-//        fe = (FlockingEntity *)(*it);
-//        if (it == children.end()) {
-//            return;
-//        }
-//    }
-//    fe->loc.set(x, y, 0);
-//};
-//
-//void FlockingCollectionEntity::removeFlocking(UITouch * Flocking)
-//{
-//    std::vector<YEntity *>::iterator it = children.begin();
-//    FlockingEntity * fe = (FlockingEntity *)(*it);
-//    while (fe->_Flocking != Flocking)
-//    {
-//        it++;
-//        fe = (FlockingEntity *)(*it);
-//        if (it == children.end()) {
-//            return;
-//        }
-//    }
-//    fe->loc.setAll(0);
-//    fe->active = false;
-//    fe->_Flocking = nullptr;
-//};
+
+void FlockingCollectionEntity::updateFlock(UITouch * touch, GLfloat x, GLfloat y)
+{
+    std::vector<YEntity *>::iterator it = children.begin();
+    Flock * fe = (Flock *)(*it);
+    while (fe->_touch != touch)
+    {
+        it++;
+        fe = (Flock *)(*it);
+        if (it == children.end()) {
+            return;
+        }
+    }
+    fe->_centerMass.set(x, y, 0);
+};
+
+void FlockingCollectionEntity::removeFlock(UITouch * touch)
+{
+    std::vector<YEntity *>::iterator it = children.begin();
+    Flock * fe = (Flock *)(*it);
+    while (fe->_touch != touch)
+    {
+        it++;
+        fe = (Flock *)(*it);
+        if (it == children.end()) {
+            return;
+        }
+    }
+    fe->loc.setAll(0);
+    fe->active = false;
+    fe->_touch = nullptr;
+};
