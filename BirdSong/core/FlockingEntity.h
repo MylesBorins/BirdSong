@@ -53,18 +53,20 @@ public:
     void init(int count);
     
 public:
+    // Simulation Functions
     Vector3D centerMass(Boid * boid);
     Vector3D collisionDetect(Boid * boid);
     Vector3D potentialVelocity(Boid * boid);
     Vector3D tendToPlace(Boid * boid);
     Vector3D boundPosition(Boid * boid);
     void boundVelocity(Boid * boid);
-    // update
+
+    // // update
     // void update( YTimeInterval dt);
     // void render();
     
 public:
-    // alpha ramp
+    Vector3D _centerMass;
     UITouch* _touch;
     bool _locked;
 };

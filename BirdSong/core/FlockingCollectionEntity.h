@@ -12,23 +12,21 @@
 #include <iostream>
 #import "y-entity.h"
 #import "Globals.h"
+#import "FlockingEntity.h"
 
 class FlockingCollectionEntity : public YEntity
 {
 public:
     // constructor
-    FlockingCollectionEntity();
+    FlockingCollectionEntity(int count);
     // destructor
-    ~FlockingCollectionEntity();
+//    ~FlockingCollectionEntity();
     
 public:
-    //set
-    void set();
-    void init(int count);
     void addFlock(UITouch * touch, GLfloat x, GLfloat y);
-    void updateFlock(UITouch * touch, GLfloat x, GLfloat y);
-    void lockFlock(UITouch * touch, GLfloat x, GLfloat y);
-    void removeFlock(GLfloat x, GLfloat y);
+//    void updateFlock(UITouch * touch, GLfloat x, GLfloat y);
+//    void lockFlock(UITouch * touch, GLfloat x, GLfloat y);
+//    void removeFlock(GLfloat x, GLfloat y);
 public:
     
     // update

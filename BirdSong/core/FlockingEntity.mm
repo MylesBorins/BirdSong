@@ -106,13 +106,12 @@ Vector3D Flock::potentialVelocity(Boid * boid)
 
 Vector3D Flock::tendToPlace(Boid * boid)
 {
-    Vector3D place(0,0,0);
-    double tend = (Globals::scaler * -1 + 1);
-    if (tend > .8)
+//
+    if (Globals::scaler > .8)
     {
-        return (place - boid->loc) * ((Globals::scaler * -1) + 1);
+        return (_centerMass - boid->loc) * ((Globals::scaler * -1) + 1);
     }
-    return (place - boid->loc) * 0.0001;//(place - boid->loc) * 0.0001 * (Globals::scaler * -1 + 1);
+    return (_centerMass - boid->loc) * 0.0001;//(place - boid->loc) * 0.0001 * (Globals::scaler * -1 + 1);
 }
 
 Vector3D Flock::boundPosition(Boid * boid)

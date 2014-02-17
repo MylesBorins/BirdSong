@@ -10,10 +10,13 @@
 #define __BirdSong__Globals__
 
 #include <iostream>
+#import "FlockingEntity.h"
 #import "mo_audio.h"
 #import "mo_gfx.h"
 #import "SceneGraph.h"
 #import "TouchCollectionEntity.h"
+#import "FlockingCollectionEntity.h"
+
 
 using namespace std;
 
@@ -41,7 +44,9 @@ public:
     
     // to keep track of touches
     static TouchCollectionEntity * touches;
-    
+//    static FlockingCollectionEntity * flocks;
+//    static Flock * flock;
+
     // colors
     static Vector3D ourWhite;
     static Vector3D ourRed;
