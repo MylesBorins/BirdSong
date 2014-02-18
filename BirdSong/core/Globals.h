@@ -67,6 +67,7 @@ public:
     
     // globals for phsyics
     static GLfloat scaler;
+    static GLfloat boundVelocity;
 };
 
 #endif /* defined(__BirdSong__Globals__) */

@@ -33,7 +33,9 @@ Vector3D Globals::ourPurple( .6, .25, .6 );
 // Vectors to store stuff
 TouchPool * Globals::touches = nullptr;
 
-GLfloat Globals::scaler = 0.5;
+// Physics stuff
+GLfloat Globals::scaler = 1;
+GLfloat Globals::boundVelocity = 1.5;
 
 // Set defaults for scheduler
 UInt32 Globals::clock = 0;

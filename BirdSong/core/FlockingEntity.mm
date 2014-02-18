@@ -110,7 +110,7 @@ Vector3D Flock::potentialVelocity(Boid * boid)
 
 Vector3D Flock::tendToPlace(Boid * boid)
 {
-    return (_centerMass - boid->loc) * _tend; //(place - boid->loc) * 0.0001 * (Globals::scaler * -1 + 1);
+    return (_centerMass - boid->loc) * _tend * Globals::scaler; //(place - boid->loc) * 0.0001 * (Globals::scaler * -1 + 1);
 }
 
 Vector3D Flock::boundPosition(Boid * boid)
@@ -120,34 +120,34 @@ Vector3D Flock::boundPosition(Boid * boid)
     Vector3D v;
     if(boid->loc.x < xmin)
     {
-        v.x = 10 * Globals::scaler;
+        v.x = 5;
     }
     else if (boid->loc.x > xmax)
     {
-        v.x = -10 * Globals::scaler;
+        v.x = -5;
     }
     if (boid->loc.y < ymin)
     {
-        v.y = 10 * Globals::scaler;
+        v.y = 5;
     }
     else if (boid->loc.y > ymax)
     {
-        v.y = -10 * Globals::scaler;
+        v.y = -5;
     }
     if (boid->loc.z < zmin)
     {
-        v.z = 10 * Globals::scaler;
+        v.z = 5;
     }
     else if (boid->loc.z > zmax)
     {
-        v.z = -10 * Globals::scaler;
+        v.z = -5;
     }
     return v;
 };
 
 void Flock::boundVelocity(Boid * boid)
 {
-    float limit = 1.5;
+    float limit = Globals::boundVelocity;
     Vector3D v;
     float mag = boid->vel.magnitude();
     
