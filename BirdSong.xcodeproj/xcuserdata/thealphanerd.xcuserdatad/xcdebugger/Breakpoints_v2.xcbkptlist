@@ -284,11 +284,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BirdSong/core/FlockingEntity.mm"
-            timestampString = "414446273.624382"
+            timestampString = "414454798.632449"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "267"
-            endingLineNumber = "267"
+            startingLineNumber = "275"
+            endingLineNumber = "275"
             landmarkName = "Flock::reset(GLfloat x, GLfloat y)"
             landmarkType = "5">
          </BreakpointContent>
@@ -300,11 +300,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BirdSong/core/FlockingEntity.mm"
-            timestampString = "414446273.624382"
+            timestampString = "414454798.632449"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "267"
-            endingLineNumber = "267"
+            startingLineNumber = "275"
+            endingLineNumber = "275"
             landmarkName = "Flock::reset(GLfloat x, GLfloat y)"
             landmarkType = "5">
          </BreakpointContent>
@@ -518,11 +518,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BirdSong/core/FlockingEntity.mm"
-            timestampString = "414451356.28425"
+            timestampString = "414454798.632449"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "298"
-            endingLineNumber = "298"
+            startingLineNumber = "311"
+            endingLineNumber = "311"
+            landmarkName = "Flock::synthesize(Float32 * buffer, UInt32 numFrames, void * userData)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BirdSong/core/FlockingEntity.mm"
+            timestampString = "414454798.632449"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "307"
+            endingLineNumber = "307"
             landmarkName = "Flock::synthesize(Float32 * buffer, UInt32 numFrames, void * userData)"
             landmarkType = "5">
          </BreakpointContent>
