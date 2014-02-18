@@ -294,6 +294,7 @@ void Flock::synthesize(Float32 * buffer, UInt32 numFrames, void * userData)
         ei!= this->children.end(); ei++ )
     {
         Boid * boid = ((Boid *)*ei);
+        double scale = std::fabs(1 - (boid->loc - _centerMass).magnitude() * 2) * alpha;
         if (boid->active) {
             if(_kill)
             {
@@ -302,7 +303,7 @@ void Flock::synthesize(Float32 * buffer, UInt32 numFrames, void * userData)
             }
             for (int i = 0; i < numFrames * 2; i += 2)
             {
-                Float32 sample = boid->ugen->tick() * alpha;
+                Float32 sample = boid->ugen->tick() * scale;
                 buffertoo[i] += sample;
                 buffertoo[i +1] += sample;
             }
