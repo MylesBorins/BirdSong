@@ -230,7 +230,7 @@ void Flock::update(YTimeInterval dt)
             boid->_texture->alpha -= boid->_texture->alpha * dt;
         }
         
-        if (alpha < 0.02)
+        if (alpha < 0.05)
         {
             active = false;
             for( vector<YEntity *>::iterator ei = this->children.begin();
@@ -238,8 +238,16 @@ void Flock::update(YTimeInterval dt)
             {
                 Boid * boid = ((Boid *)*ei);
                 boid->active = false;
-                boid->_texture->alpha = 1;
             }
+        }
+    }
+    else
+    {
+        for( vector<YEntity *>::iterator ei = this->children.begin();
+            ei!= this->children.end(); ei++ )
+        {
+            Boid * boid = ((Boid *)*ei);
+            boid->_texture->alpha = boid->_texture->alpha  - (boid->loc - _centerMass).magnitude() * 2 *dt;
         }
     }
 };
@@ -294,7 +302,12 @@ void Flock::synthesize(Float32 * buffer, UInt32 numFrames, void * userData)
         ei!= this->children.end(); ei++ )
     {
         Boid * boid = ((Boid *)*ei);
-        double scale = std::fabs(1 - (boid->loc - _centerMass).magnitude() * 2) * alpha;
+        if(!_kill)
+        {
+            boid->_texture->alpha =  MoFun::clamp(1 - (boid->loc - _centerMass).magnitude() * 2, 0.8, 2);
+            
+        }
+        double scale = std::fabs(1 - (boid->loc - _centerMass).magnitude() * 2) * alpha * alpha;
         if (boid->active) {
             if(_kill)
             {
