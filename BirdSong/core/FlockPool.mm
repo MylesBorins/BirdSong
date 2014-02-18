@@ -43,7 +43,7 @@ void FlockPool::touched(UITouch * touch, GLfloat x, GLfloat y)
     for (std::vector<YEntity *>::iterator it = children.begin(); it != children.end(); it++)
     {
         Flock * fe = (Flock *)(*it);
-        if (fe->active && fabs(fe->_centerMass.x - x) < 0.15 && fabs(fe->_centerMass.x - x) < 0.15)
+        if (fe->active && fabs(fe->_centerMass.x - x) < 0.25 && fabs(fe->_centerMass.y - y) < 0.25)
         {
             removeFlock(fe);
             return;
@@ -53,7 +53,10 @@ void FlockPool::touched(UITouch * touch, GLfloat x, GLfloat y)
             nonActiveFlock = fe;
         }
     }
-    addFlock(nonActiveFlock, touch, x, y);
+    if (nonActiveFlock != nullptr)
+    {
+        addFlock(nonActiveFlock, touch, x, y);
+    }
 };
 void FlockPool::addFlock(Flock * flock, UITouch * touch, GLfloat x, GLfloat y)
 {

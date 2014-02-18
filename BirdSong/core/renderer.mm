@@ -41,7 +41,7 @@ void BirdSongInitGraph()
     // instantiate simulation
     Globals::graph = new SceneGraph();
     YEntity * root = &Globals::graph->root();
-    Globals::touches = new TouchPool(10);
+    Globals::touches = new TouchPool(12);
     root->addChild(Globals::touches);
 }
 
