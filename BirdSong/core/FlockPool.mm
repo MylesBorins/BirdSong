@@ -77,7 +77,7 @@ void FlockPool::updateFlock(UITouch * touch, GLfloat x, GLfloat y)
             return;
         }
     }
-    fe->_centerMass.set(x, y, 0);
+    fe->updateCenter(x, y);
 };
 
 void FlockPool::lockFlock(UITouch * touch)
@@ -104,4 +104,26 @@ void FlockPool::removeFlock(Flock * flock)
     flock->_locked = false;
     flock->_kill = true;
 //    flock->active = false;
+};
+
+void FlockPool::synthesize(Float32 * buffer, UInt32 numFrames, void * userData)
+{
+    int count = 0;
+    if (this != nullptr)
+    {
+        for (std::vector<YEntity *>::iterator it = children.begin(); it < children.end(); it++)
+        {
+            Flock * fe = (Flock *)(*it);
+            if(fe->active)
+            {
+                fe->synthesize(buffer, numFrames, NULL);
+                count++;
+            }
+        }
+        for (int i = 0; i < numFrames * 2; i++)
+        {
+            buffer[i] /= count;
+        }
+    }
+    
 };

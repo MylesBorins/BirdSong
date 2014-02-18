@@ -8,17 +8,6 @@
 
 #include "Audio.h"
 
-// Set defaults for scheduler
-UInt32 Audio::clock = 0;
-double Audio::tempo = 128;
-double beat = (SRATE * 60) / Audio::tempo;
-UInt32 Audio::whole = beat * 4;
-UInt32 Audio::half = beat * 2;
-UInt32 Audio::quarter = beat;
-UInt32 Audio::eigth = beat / 2;
-UInt32 Audio::sixteenth = beat / 4;
-UInt32 Audio::thirtysecond = beat / 8;
-
 //-----------------------------------------------------------------------------
 // name: audio_callback()
 // desc: audio callback, yeah
@@ -27,27 +16,16 @@ void audio_callback( Float32 * buffer, UInt32 numFrames, void * userData )
 {
     // zero!!!
     memset( buffer, 0, sizeof(SAMPLE)*numFrames*2 );
+    // Get dat buffer
+    Simulation::flocks->synthesize(buffer, numFrames, NULL);
     
-    Audio::clock += numFrames;
-    
-//    if (Audio::clock % Audio::whole <= FRAMESIZE)
-//    {
-//       NSLog( @"WHOLE NOTE" );
-//    }
-//    else if (Audio::clock % Audio::half <= FRAMESIZE)
-//    {
-//        NSLog( @"HALF NOTE" );
-//    }
-//    else if (Audio::clock % Audio::quarter <= FRAMESIZE)
-//    {
-//        NSLog( @"QUARTER NOTE" );
-//    }
+    Globals::clock += numFrames;
 }
 
 bool Audio::init()
 {
     // init the audio layer
-    bool result = MoAudio::init( SRATE, FRAMESIZE, 2 );
+    bool result = MoAudio::init( SAMPRATE, FRAMESIZE, 2 );
     if( !result )
     {
         // something went wrong
@@ -77,12 +55,13 @@ bool Audio::start()
 void Audio::setTempo(double tempo)
 {
     // Assuming 4/4
-    Audio::tempo = tempo;
-    double beat = (SRATE * 60) / tempo;
-    Audio::whole = beat * 4;
-    Audio::half = beat * 2;
-    Audio::quarter = beat;
-    Audio::eigth = beat / 2;
-    Audio::sixteenth = beat / 4;
-    Audio::thirtysecond = beat / 8;
+    Globals::clock = 0;
+    Globals::tempo = 128;
+    double beat = (SAMPRATE * 60) / Globals::tempo;
+    Globals::whole = beat * 4;
+    Globals::half = beat * 2;
+    Globals::quarter = beat;
+    Globals::eigth = beat / 2;
+    Globals::sixteenth = beat / 4;
+    Globals::thirtysecond = beat / 8;
 };

@@ -16,14 +16,15 @@ Boid::Boid()
     _texture = texEnt;
     texEnt->alpha = 1;
     texEnt->sca.setAll(MoFun::rand2f(0.05, 0.1));
-    
+    ugen = new stk::SineWave();
+    ugen->setRate(SAMPRATE / 10);
     this->addChild(texEnt);
 }
 
 void Boid::update( YTimeInterval dt )
 {
     dtCount += dt;
-    if (dtCount > (1 / SRATE) * 30)
+    if (dtCount > (1 / SAMPRATE) * 30)
     {
         Vector3D v1, v2, v3, v4, v5, v6;
         
@@ -82,7 +83,7 @@ Vector3D Flock::collisionDetect(Boid * boid)
             }
         }
         
-    }		
+    }
     return collision;
 };
 
@@ -178,28 +179,28 @@ void Flock::update(YTimeInterval dt)
 {
     if(_touch != nullptr)
     {
-        UInt32 spawnRate = Audio::thirtysecond;
+        UInt32 spawnRate = Globals::thirtysecond;
         if (_centerMass.y <= -0.66) {
-            spawnRate = Audio::whole;
+            spawnRate = Globals::whole;
         }
         else if (_centerMass.y <= -0.33)
         {
-            spawnRate = Audio::half;
+            spawnRate = Globals::half;
         }
         else if (_centerMass.y <= 0.)
         {
-            spawnRate = Audio::quarter;
+            spawnRate = Globals::quarter;
         }
         else if (_centerMass.y <= 0.33)
         {
-            spawnRate = Audio::eigth;
+            spawnRate = Globals::eigth;
         }
         else if (_centerMass.y <= 0.66)
         {
-            spawnRate = Audio::sixteenth;
+            spawnRate = Globals::sixteenth;
         }
 
-        if (Audio::clock % spawnRate <= FRAMESIZE)
+        if (Globals::clock % spawnRate <= FRAMESIZE)
         {
             std::vector<YEntity *>::iterator it = children.begin();
             Boid * be = (Boid *)(*it);
@@ -241,7 +242,7 @@ void Flock::update(YTimeInterval dt)
 
 void Flock::reset(GLfloat x, GLfloat y)
 {
-    _centerMass.set(x, y, 0);
+    updateCenter(x, y);
     _tend = 0.7;
     _kill = false;
     alpha = 1;
@@ -262,4 +263,44 @@ void Flock::reset(GLfloat x, GLfloat y)
         boid->loc.set(MoFun::rand2f(-1.0,1.0),MoFun::rand2f(-1.0,1.0), MoFun::rand2f(-1.0,1.0));
     }
     
+};
+
+void Flock::updateCenter(GLfloat x, GLfloat y)
+{
+    _centerMass.set(x, y, 0);
+    stk::StkFloat fundemental = MoFun::map(x, -1.3, 1.3, 50, 500);
+    int count = 0;
+    for( vector<YEntity *>::iterator ei = this->children.begin();
+        ei!= this->children.end(); ei++ )
+    {
+        Boid * boid = ((Boid *)*ei);
+        boid->ugen->setFrequency(fundemental + fundemental * count);
+        count++;
+    }
+};
+
+void Flock::synthesize(Float32 * buffer, UInt32 numFrames, void * userData)
+{
+    int count = 0;
+    Float32 buffertoo[numFrames*2];
+    // zero!!!
+    memset( buffertoo, 0, sizeof(SAMPLE)*numFrames*2 );
+    for( vector<YEntity *>::iterator ei = this->children.begin();
+        ei!= this->children.end(); ei++ )
+    {
+        Boid * boid = ((Boid *)*ei);
+        if (boid->active) {
+            for (int i = 0; i < numFrames * 2; i += 2)
+            {
+                Float32 sample = boid->ugen->tick() * alpha;
+                buffertoo[i] += sample;
+                buffertoo[i +1] += sample;
+            }
+            count++;
+        }
+    }
+    for (int i = 0; i < numFrames * 2; i ++)
+    {
+        buffer[i] += (buffertoo[i] / count);
+    }
 };

@@ -497,7 +497,7 @@ typedef float FLOAT32;
 typedef double FLOAT64;
 
 // The default sampling rate.
-const StkFloat SRATE = 44100.0;
+const StkFloat SRATE = 22000.0;
 
 // The default real-time audio input and output buffer size.  If
 // clicks are occuring in the input and/or output sound stream, a

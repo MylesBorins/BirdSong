@@ -14,7 +14,7 @@
 #include "Texture.h"
 #include "Globals.h"
 #include "mo_fun.h"
-#include "Audio.h"
+#include "SineWave.h"
 
 using namespace std;
 
@@ -37,6 +37,7 @@ public:
     // alpha ramp
     Texture * _texture;
     Vector3D ALPHA;
+    stk::SineWave * ugen;
 };
 
 //-----------------------------------------------------------------------------
@@ -63,8 +64,12 @@ public:
     void boundVelocity(Boid * boid);
 
     void update( YTimeInterval dt );
+
+    void updateCenter(GLfloat x, GLfloat y);
     
     void reset(GLfloat x, GLfloat y);
+    
+    void synthesize(Float32 * buffer, UInt32 numFrames, void * userData);
     // void render();
     
 public:

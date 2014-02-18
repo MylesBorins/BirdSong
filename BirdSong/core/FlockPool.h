@@ -28,6 +28,8 @@ public:
     void updateFlock(UITouch * touch, GLfloat x, GLfloat y);
     void lockFlock(UITouch * touch);
     void removeFlock(Flock * flock);
+    
+    void synthesize(Float32 * buffer, UInt32 numFrames, void * userData);
 //    void removeFlock(UITouch * touch);
 public:
     

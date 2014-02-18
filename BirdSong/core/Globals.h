@@ -19,7 +19,7 @@
 
 using namespace std;
 
-#define SRATE 24000
+#define SAMPRATE 24000
 #define FRAMESIZE 1024
 #define NUM_CHANNELS 2
 #define NUM_ENTITIES 200
@@ -54,6 +54,16 @@ public:
     static Vector3D ourYellow;
     static Vector3D ourSoftYellow;
     static Vector3D ourPurple;
+    
+    // simple scheduler
+    static UInt32 clock;
+    static double tempo;
+    static UInt32 thirtysecond;
+    static UInt32 sixteenth;
+    static UInt32 eigth;
+    static UInt32 quarter;
+    static UInt32 half;
+    static UInt32 whole;
     
     // globals for phsyics
     static GLfloat scaler;

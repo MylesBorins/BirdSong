@@ -34,3 +34,14 @@ Vector3D Globals::ourPurple( .6, .25, .6 );
 TouchPool * Globals::touches = nullptr;
 
 GLfloat Globals::scaler = 0.5;
+
+// Set defaults for scheduler
+UInt32 Globals::clock = 0;
+double Globals::tempo = 128;
+double beat = (SAMPRATE * 60) / Globals::tempo;
+UInt32 Globals::whole = beat * 4;
+UInt32 Globals::half = beat * 2;
+UInt32 Globals::quarter = beat;
+UInt32 Globals::eigth = beat / 2;
+UInt32 Globals::sixteenth = beat / 4;
+UInt32 Globals::thirtysecond = beat / 8;
