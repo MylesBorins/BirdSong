@@ -61,6 +61,8 @@ Vector3D Flock::centerMass(Boid * boid)
         
     }
     double scaler = (1 / ((double)this->children.size() - 1));
+    _perceivedCenter = perceivedCenter;
+    reverb->setT60((perceivedCenter - _centerMass).magnitude() / 2);
     perceivedCenter *= scaler;
     return (perceivedCenter - boid->loc) * 0.1;
 };
@@ -173,6 +175,8 @@ void Flock::init(int count)
     }
     alpha = 1;
     _kill = false;
+    
+    reverb = new stk::PRCRev(0.1);
 }
 
 void Flock::update(YTimeInterval dt)
@@ -301,6 +305,6 @@ void Flock::synthesize(Float32 * buffer, UInt32 numFrames, void * userData)
     }
     for (int i = 0; i < numFrames * 2; i ++)
     {
-        buffer[i] += (buffertoo[i] / count);
+        buffer[i] += reverb->tick(buffertoo[i] / count);
     }
 };

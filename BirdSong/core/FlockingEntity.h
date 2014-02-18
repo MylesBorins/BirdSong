@@ -15,6 +15,7 @@
 #include "Globals.h"
 #include "mo_fun.h"
 #include "SineWave.h"
+#include "PRCRev.h"
 
 using namespace std;
 
@@ -74,10 +75,12 @@ public:
     
 public:
     Vector3D _centerMass;
+    Vector3D _perceivedCenter;
     UITouch* _touch;
     bool _locked;
     double _tend;
     bool _kill;
+    stk::PRCRev * reverb;
 };
 
 #endif /* defined(__BirdSong__FlockingEntity__) */
