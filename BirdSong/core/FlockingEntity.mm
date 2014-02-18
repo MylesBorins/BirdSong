@@ -286,6 +286,7 @@ void Flock::updateCenter(GLfloat x, GLfloat y)
 void Flock::synthesize(Float32 * buffer, UInt32 numFrames, void * userData)
 {
     int count = 0;
+    int boidCount = 0;
     Float32 buffertoo[numFrames*2];
     // zero!!!
     memset( buffertoo, 0, sizeof(SAMPLE)*numFrames*2 );
@@ -294,15 +295,20 @@ void Flock::synthesize(Float32 * buffer, UInt32 numFrames, void * userData)
     {
         Boid * boid = ((Boid *)*ei);
         if (boid->active) {
+            if(_kill)
+            {
+                stk::StkFloat fundemental = MoFun::map(boid->loc.x, -1.3, 1.3, 50, 500);
+                boid->ugen->setFrequency(fundemental + fundemental * boidCount);
+            }
             for (int i = 0; i < numFrames * 2; i += 2)
             {
-                
                 Float32 sample = boid->ugen->tick() * alpha;
                 buffertoo[i] += sample;
                 buffertoo[i +1] += sample;
             }
             count++;
         }
+        boidCount++;
     }
     for (int i = 0; i < numFrames * 2; i ++)
     {
