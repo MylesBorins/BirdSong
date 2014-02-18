@@ -18,6 +18,6 @@ void Simulation::systemCascade(YTimeInterval dt)
 void Simulation::init()
 {
     YEntity * root = &Globals::graph->root();
-    flocks = new FlockPool(12);
+    flocks = new FlockPool(8);
     root->addChild(flocks);
 };

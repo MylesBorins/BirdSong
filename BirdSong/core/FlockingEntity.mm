@@ -296,6 +296,7 @@ void Flock::synthesize(Float32 * buffer, UInt32 numFrames, void * userData)
         if (boid->active) {
             for (int i = 0; i < numFrames * 2; i += 2)
             {
+                
                 Float32 sample = boid->ugen->tick() * alpha;
                 buffertoo[i] += sample;
                 buffertoo[i +1] += sample;
