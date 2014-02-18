@@ -41,7 +41,7 @@ void touch_callback( NSSet * touches, UIView * view,
             case UITouchPhaseBegan:
             {
                 Globals::touches->addTouch(touch, x, y);
-                Simulation::flocks->addFlock(touch, x, y);
+                Simulation::flocks->touched(touch, x, y);
                 break;
             }
             case UITouchPhaseStationary:
@@ -59,7 +59,7 @@ void touch_callback( NSSet * touches, UIView * view,
             case UITouchPhaseCancelled:
             {
                 Globals::touches->removeTouch(touch);
-                Simulation::flocks->removeFlock(touch);
+                Simulation::flocks->lockFlock(touch);
                 break;
             }
                 // should not get here

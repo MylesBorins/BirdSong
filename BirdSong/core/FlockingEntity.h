@@ -14,6 +14,7 @@
 #include "Texture.h"
 #include "Globals.h"
 #include "mo_fun.h"
+#include "Audio.h"
 
 using namespace std;
 
@@ -61,14 +62,17 @@ public:
     Vector3D boundPosition(Boid * boid);
     void boundVelocity(Boid * boid);
 
-    // // update
-    // void update( YTimeInterval dt);
+    void update( YTimeInterval dt );
+    
+    void reset(GLfloat x, GLfloat y);
     // void render();
     
 public:
     Vector3D _centerMass;
     UITouch* _touch;
     bool _locked;
+    double _tend;
+    bool _kill;
 };
 
 #endif /* defined(__BirdSong__FlockingEntity__) */

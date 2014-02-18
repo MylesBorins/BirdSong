@@ -13,8 +13,8 @@ YTimeInterval dtCount = 0;
 Boid::Boid()
 {
     Texture * texEnt = new Texture;
-
-    texEnt->alpha = 0.2;
+    _texture = texEnt;
+    texEnt->alpha = 1;
     texEnt->sca.setAll(MoFun::rand2f(0.05, 0.1));
     
     this->addChild(texEnt);
@@ -76,13 +76,13 @@ Vector3D Flock::collisionDetect(Boid * boid)
         {
             Vector3D diff = (iteratedBoid->loc - boid->loc);
             double magnitude = diff.magnitude();
-            if(magnitude < 0.15)
+            if(magnitude < 0.2 || (_kill && magnitude < 0.5))
             {
                 collision = collision -(iteratedBoid->loc - boid->loc);
             }
         }
         
-    }
+    }		
     return collision;
 };
 
@@ -107,13 +107,13 @@ Vector3D Flock::potentialVelocity(Boid * boid)
 
 Vector3D Flock::tendToPlace(Boid * boid)
 {
-    return (_centerMass - boid->loc) * Globals::scaler; //(place - boid->loc) * 0.0001 * (Globals::scaler * -1 + 1);
+    return (_centerMass - boid->loc) * _tend; //(place - boid->loc) * 0.0001 * (Globals::scaler * -1 + 1);
 }
 
 Vector3D Flock::boundPosition(Boid * boid)
 {
 //    float xmin = -10, xmax = 10, ymin = -0.7, ymax = 0.7, zmin = -150, zmax = 10;
-    float xmin = -1.45, xmax = 1.45, ymin = -1., ymax = 1., zmin = -.99, zmax = 1;
+    float xmin = -1.3, xmax = 1.3, ymin = -1., ymax = 1., zmin = -.99, zmax = 1;
     Vector3D v;
     if(boid->loc.x < xmin)
     {
@@ -161,7 +161,105 @@ void Flock::init(int count)
         Boid * boid = new Boid;
         boid->loc.set(MoFun::rand2f(-1.0,1.0),MoFun::rand2f(-1.0,1.0), MoFun::rand2f(-1.0,1.0));
         // boid->loc.setXYFromPolar( 0.8 - i * 0.01, (360 * i / count) + i * 10);
-        
+        if (i == 0)
+        {
+            boid->active = true;
+        }
+        else {
+            boid->active = false;
+        }
         this->addChild(boid);
     }
+    alpha = 1;
+    _kill = false;
 }
+
+void Flock::update(YTimeInterval dt)
+{
+    if(_touch != nullptr)
+    {
+        UInt32 spawnRate = Audio::thirtysecond;
+        if (_centerMass.y <= -0.66) {
+            spawnRate = Audio::whole;
+        }
+        else if (_centerMass.y <= -0.33)
+        {
+            spawnRate = Audio::half;
+        }
+        else if (_centerMass.y <= 0.)
+        {
+            spawnRate = Audio::quarter;
+        }
+        else if (_centerMass.y <= 0.33)
+        {
+            spawnRate = Audio::eigth;
+        }
+        else if (_centerMass.y <= 0.66)
+        {
+            spawnRate = Audio::sixteenth;
+        }
+
+        if (Audio::clock % spawnRate <= FRAMESIZE)
+        {
+            std::vector<YEntity *>::iterator it = children.begin();
+            Boid * be = (Boid *)(*it);
+            while (be->active)
+            {
+                it++;
+                be = (Boid *)(*it);
+                if (it == children.end()) {
+                    return;
+                }
+            }
+            be->active = true;
+        }
+    }
+    
+    if(_kill)
+    {
+        alpha -= alpha * dt;
+        for( vector<YEntity *>::iterator ei = this->children.begin();
+            ei!= this->children.end(); ei++ )
+        {
+            Boid * boid = ((Boid *)*ei);
+            boid->_texture->alpha -= boid->_texture->alpha * dt;
+        }
+        
+        if (alpha < 0.02)
+        {
+            active = false;
+            for( vector<YEntity *>::iterator ei = this->children.begin();
+                ei!= this->children.end(); ei++ )
+            {
+                Boid * boid = ((Boid *)*ei);
+                boid->active = false;
+                boid->_texture->alpha = 1;
+            }
+        }
+    }
+};
+
+void Flock::reset(GLfloat x, GLfloat y)
+{
+    _centerMass.set(x, y, 0);
+    _tend = 0.7;
+    _kill = false;
+    alpha = 1;
+    bool first = true;
+    for( vector<YEntity *>::iterator ei = this->children.begin();
+        ei!= this->children.end(); ei++ )
+    {
+        Boid * boid = ((Boid *)*ei);
+        if (first)
+        {
+            boid->active = true;
+            first = !first;
+        }
+        else {
+            boid->active = false;
+        }
+        boid->_texture->alpha = 1;
+        boid->loc.set(MoFun::rand2f(-1.0,1.0),MoFun::rand2f(-1.0,1.0), MoFun::rand2f(-1.0,1.0));
+    }
+    
+};

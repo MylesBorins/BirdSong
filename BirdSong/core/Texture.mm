@@ -48,16 +48,14 @@ void Texture::render( )
         glEnable( GL_TEXTURE_2D );
         // enable blending
         glEnable( GL_BLEND );
-        // set blend func
-        if(m_blend){
-            glBlendFunc( GL_ONE, GL_ONE );
-        }
-        else {
-            glBlendFunc( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA );
-        }
+
+        glBlendFunc( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA );
         
         // bind the texture
         glBindTexture( GL_TEXTURE_2D, *Globals::texture );
+        
+        // set color
+        glColor4f( col.x, col.y, col.z, alpha );
         
         // vertex
         glVertexPointer( 2, GL_FLOAT, 0, squareVertices );

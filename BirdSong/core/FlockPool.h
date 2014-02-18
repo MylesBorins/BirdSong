@@ -10,9 +10,9 @@
 #define __BirdSong__FlockPool__
 
 #include <iostream>
+#include <math.h>
 #import "y-entity.h"
-#import "Globals.h"
-#import "FlockPool.h"
+#import "FlockingEntity.h"
 
 class FlockPool : public YEntity
 {
@@ -23,11 +23,12 @@ public:
 //    ~FlockPool();
     
 public:
-    void addFlock(UITouch * touch, GLfloat x, GLfloat y);
+    void touched(UITouch * touch, GLfloat x, GLfloat y);
+    void addFlock(Flock * flock, UITouch * touch, GLfloat x, GLfloat y);
     void updateFlock(UITouch * touch, GLfloat x, GLfloat y);
-//    void lockFlock(UITouch * touch, GLfloat x, GLfloat y);
-//    void removeFlock(GLfloat x, GLfloat y);
-    void removeFlock(UITouch * touch);
+    void lockFlock(UITouch * touch);
+    void removeFlock(Flock * flock);
+//    void removeFlock(UITouch * touch);
 public:
     
     // update

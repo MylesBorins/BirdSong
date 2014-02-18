@@ -15,8 +15,9 @@ double beat = (SRATE * 60) / Audio::tempo;
 UInt32 Audio::whole = beat * 4;
 UInt32 Audio::half = beat * 2;
 UInt32 Audio::quarter = beat;
-UInt32 Audio::sixteenth = beat / 2;
-UInt32 Audio::thirtysecond = beat / 4;
+UInt32 Audio::eigth = beat / 2;
+UInt32 Audio::sixteenth = beat / 4;
+UInt32 Audio::thirtysecond = beat / 8;
 
 //-----------------------------------------------------------------------------
 // name: audio_callback()
@@ -81,6 +82,7 @@ void Audio::setTempo(double tempo)
     Audio::whole = beat * 4;
     Audio::half = beat * 2;
     Audio::quarter = beat;
-    Audio::sixteenth = beat / 2;
-    Audio::thirtysecond = beat / 4;
+    Audio::eigth = beat / 2;
+    Audio::sixteenth = beat / 4;
+    Audio::thirtysecond = beat / 8;
 };
